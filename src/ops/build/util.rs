@@ -380,6 +380,9 @@ const HOST_TAG: &str = "windows";
 #[cfg(target_os = "linux")]
 const HOST_TAG: &str = "linux-x86_64";
 
+#[cfg(target_os = "android")]
+const HOST_TAG: &str = "linux-aarch64";
+
 #[cfg(target_os = "macos")]
 const HOST_TAG: &str = "darwin-x86_64";
 
