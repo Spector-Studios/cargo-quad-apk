@@ -41,6 +41,8 @@ pub fn build(
     let root_build_dir = util::get_root_build_directory(workspace, config);
     let miniquad_root_path = util::find_package_root_path(workspace, config, "miniquad");
     let java_files = util::collect_java_files(workspace, config);
+
+    println!("Library started....................");
     let shared_libraries = compile::build_shared_libraries(
         workspace,
         config,
@@ -48,6 +50,7 @@ pub fn build(
         &root_build_dir,
         &miniquad_root_path,
     )?;
+    println!("Library built......................");
     let sign = !options.get_flag("nosign");
 
     build_apks(
